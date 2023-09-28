@@ -11,6 +11,9 @@
 		2BC6D5FB2AC5471900F7AD98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC6D5FA2AC5471900F7AD98 /* ContentView.swift */; };
 		2BC6D5FD2AC5471A00F7AD98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC6D5FC2AC5471A00F7AD98 /* Assets.xcassets */; };
 		2BC6D6002AC5471A00F7AD98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC6D5FF2AC5471A00F7AD98 /* Preview Assets.xcassets */; };
+		2BC6D6072AC54ADA00F7AD98 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC6D6062AC54ADA00F7AD98 /* AppModel.swift */; };
+		2BC6D60A2AC57FD800F7AD98 /* CNContact+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC6D6092AC57FD800F7AD98 /* CNContact+Utils.swift */; };
+		2BC6D60C2AC5800500F7AD98 /* CNMutableContact+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC6D60B2AC5800500F7AD98 /* CNMutableContact+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,10 @@
 		2BC6D5FA2AC5471900F7AD98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2BC6D5FC2AC5471A00F7AD98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BC6D5FF2AC5471A00F7AD98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2BC6D6062AC54ADA00F7AD98 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		2BC6D6082AC54FAF00F7AD98 /* OrzContacts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrzContacts.entitlements; sourceTree = "<group>"; };
+		2BC6D6092AC57FD800F7AD98 /* CNContact+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CNContact+Utils.swift"; sourceTree = "<group>"; };
+		2BC6D60B2AC5800500F7AD98 /* CNMutableContact+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CNMutableContact+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +59,11 @@
 			isa = PBXGroup;
 			children = (
 				2BC6D5F82AC5471900F7AD98 /* OrzContactsApp.swift */,
-				2BC6D5FA2AC5471900F7AD98 /* ContentView.swift */,
+				2BC6D60E2AC5801D00F7AD98 /* Model */,
+				2BC6D60F2AC5802400F7AD98 /* View */,
+				2BC6D60D2AC5801500F7AD98 /* Utils */,
 				2BC6D5FC2AC5471A00F7AD98 /* Assets.xcassets */,
+				2BC6D6082AC54FAF00F7AD98 /* OrzContacts.entitlements */,
 				2BC6D5FE2AC5471A00F7AD98 /* Preview Content */,
 			);
 			path = OrzContacts;
@@ -65,6 +75,31 @@
 				2BC6D5FF2AC5471A00F7AD98 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2BC6D60D2AC5801500F7AD98 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2BC6D60B2AC5800500F7AD98 /* CNMutableContact+Utils.swift */,
+				2BC6D6092AC57FD800F7AD98 /* CNContact+Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2BC6D60E2AC5801D00F7AD98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2BC6D6062AC54ADA00F7AD98 /* AppModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2BC6D60F2AC5802400F7AD98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2BC6D5FA2AC5471900F7AD98 /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +173,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BC6D5FB2AC5471900F7AD98 /* ContentView.swift in Sources */,
+				2BC6D60C2AC5800500F7AD98 /* CNMutableContact+Utils.swift in Sources */,
+				2BC6D60A2AC57FD800F7AD98 /* CNContact+Utils.swift in Sources */,
+				2BC6D6072AC54ADA00F7AD98 /* AppModel.swift in Sources */,
 				2BC6D5F92AC5471900F7AD98 /* OrzContactsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,12 +307,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OrzContacts/OrzContacts.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"OrzContacts/Preview Content\"";
-				DEVELOPMENT_TEAM = 6UF48V8A6H;
+				DEVELOPMENT_TEAM = 2N62934Y28;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSContactsUsageDescription = "remove duplicated contacts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -285,7 +325,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jokerhub.OrzContacts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jokerhub.Contacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -298,12 +338,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OrzContacts/OrzContacts.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"OrzContacts/Preview Content\"";
-				DEVELOPMENT_TEAM = 6UF48V8A6H;
+				DEVELOPMENT_TEAM = 2N62934Y28;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSContactsUsageDescription = "remove duplicated contacts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -314,7 +356,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jokerhub.OrzContacts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jokerhub.Contacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
