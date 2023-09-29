@@ -8,9 +8,10 @@
 import SwiftUI
 import Contacts
 
-class AppModel: ObservableObject {
+@Observable
+final class AppModel {
     
-    @Published var contacts = [CNContact]()
+    var contacts = [CNContact]()
 
     func fetchAllContacts() {
         

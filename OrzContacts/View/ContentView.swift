@@ -9,19 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var model: AppModel
+    @Environment(AppModel.self) var model
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        List {
+            ForEach(model.contacts) { contact in
+                HStack {
+                    Text("姓：" + contact.familyName + " " + "名：" + contact.givenName)
+                }
+            }
         }
-        .padding()
+        .listStyle(.automatic)
         .task {
             model.fetchAllContacts()
         }
+
     }
 }
 
